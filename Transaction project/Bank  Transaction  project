@@ -1,0 +1,64 @@
+print("WELCOME TO BANK ")
+
+print("----------------")
+
+
+class BankAccount():
+    def __init__(self,account_number,holder_name,balance = 0):
+        self.account_no = account_number
+        self.name = holder_name
+        self.balance = balance
+
+    
+    def deposite(self,Amount):
+        if Amount >=0 :
+            self.balance += Amount
+            print(f'Rs.{Amount} ha been Succesfully deposite')
+            print(f'Total Balance {self.account_no} :{self.balance}')
+        else:
+            print(f'Enter Amount is invalid')
+    
+
+    def withdraw(self,Amount):
+        if (Amount >= 0) and (Amount <= self.balance):
+            self.balance -= Amount
+            print(f'Rs.{Amount} has succesfully Withdraw')
+            print(f'Total balance :{self.balance}')
+        else:
+            print("Insufficient balance")
+
+    def Transfer(self,other_account,Amount):
+        if Amount > 0  and Amount <= self.balance:
+            self.balance -= Amount
+            other_account.balance += Amount
+            print(f"Rs.{Amount} has been successfully transferred to {other_account.account_no}")
+            print(f"Your New Balance: {self.balance}")
+        else:
+            print("Insufficient balance or invalid amount")
+        
+        
+
+
+
+    def get_balance(self):
+        return self.balance
+    
+
+
+
+AA = BankAccount(321,"Aniket",0)
+BB = BankAccount(101,"Manish",0)
+AA.deposite(10000)
+BB.deposite(3000)
+AA.Transfer(BB,5000)
+
+
+
+print("________________________________________________________________________")
+
+print(f"Final Balance in {AA.account_no}: {AA.get_balance()}")
+print(f"Final Balance in {BB.account_no}: {BB.get_balance()}")
+
+print()
+
+
