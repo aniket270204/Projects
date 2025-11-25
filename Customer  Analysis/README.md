@@ -59,7 +59,8 @@ Key insights extracted from PostgreSQL queries include:
 ✔ Customer segmentation: New, Returning, Loyal 
 ✔ Top 3 most purchased products in each category 
 ✔ Subscription likelihood among repeat buyers (>5 purchases) 
-✔ Revenue contribution by age groups
+✔ Revenue contribution by age groups 
+
 
 
 
