@@ -88,6 +88,3 @@ The dashboard visualizes:
 | Promote high-rated & top-selling products | Improve sales conversion |
 | Target campaigns based on age & shipping preference | Improve marketing ROI |
 
----
-
-## 📁 Project Structure
