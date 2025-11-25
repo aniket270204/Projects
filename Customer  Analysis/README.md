@@ -1,89 +1,93 @@
-🛍️ Customer Shopping Behavior Analysis 
-📌 Project Overview
+# 🛍️ Customer Shopping Behavior Analysis
 
-This project analyzes 3,900 customer shopping transactions to uncover patterns in spending, segmentation,
-product preferences, and subscription behavior.
-Insights derived from this analysis can support data-driven decision-making in marketing,
-inventory planning, and customer retention.
+A full data analytics project focused on understanding customer purchasing patterns using **Python, SQL, PostgreSQL, and Power BI**. This analysis uncovers insights related to spending behavior, product preferences, customer segments, and subscription impact — enabling informed business decision-making.
 
+---
 
+## 📌 Project Overview
+This project analyzes **3,900 customer shopping transactions** to identify:
 
+- Spending patterns and key revenue drivers  
+- High-value customer segments  
+- Top-performing categories and products  
+- Discount and subscription influence on purchases  
 
-📂 Dataset Summary
+The workflow covers **data cleaning → feature engineering → SQL analytics → dashboard visualization**.
 
-Details Information 
+---
 
-Rows           = 3,900 
-Columns        = 18 
-Missing Values = 37 (Review Rating) 
-Key Features   = Age, Gender, Subscription Status, Item Purchased,
-                 Category, Season, Purchase Amount, Discount Applied,
-                 Frequency, Review Rating, Shipping Type, etc.
+## 📂 Dataset Summary
+| Attribute | Details |
+|----------|---------|
+| Rows | 3,900 |
+| Columns | 18 |
+| Missing Values | 37 (Review Rating) |
+| Data Includes | Age, Gender, Location, Item Purchased, Category, Purchase Amount, Season, Discount Applied, Previous Purchases, Review Rating, Shipping Type, etc. |
 
+---
 
+## 🛠️ Tech Stack
+| Stage | Tools |
+|-------|------|
+| Data Cleaning & EDA | Python (Pandas, NumPy) |
+| Database | PostgreSQL |
+| Querying | SQL |
+| Visualization | Power BI |
 
+---
 
-🔧 Tech Stack
+## 🧹 Data Processing & Feature Engineering (Python)
+Key steps performed in preprocessing:
 
-Stage Technologies Data Cleaning & Prep Python (Pandas, NumPy) Database 
-Integration PostgreSQL Analytical Queries SQL Data Visualization Power BI
+- Loaded dataset and performed summary exploration (`df.info()`, `.describe()`)
+- Imputed missing values in **Review Rating** using **median per category**
+- Standardized column naming to **snake_case**
+- Created new attributes:
+  - `age_group` from age bins
+  - `purchase_frequency_days` from timestamps
+- Removed redundant column `promo_code_used`
+- Uploaded cleaned dataset into **PostgreSQL** for structured analysis
 
+---
 
+## 📊 SQL Business Insights
+The following insights were extracted through SQL queries:
 
-🧹 Data Processing & Feature Engineering (Python)
+| Topic | Insight |
+|-------|---------|
+| Gender Revenue Split | Revenue comparison between male vs female customers |
+| Discount Behavior | High-spending customers despite discounts |
+| Product Quality | Top 5 products based on review ratings |
+| Shipping Preference | Express vs Standard revenue differences |
+| Subscription Value | Subscriber vs Non-subscriber spending & revenue share |
+| Discount Dependency | Products that heavily rely on discounts |
+| Customer Segmentation | New ▸ Returning ▸ Loyal classification |
+| Category Leaders | Top 3 products based on purchase count per category |
+| Subscription Pattern | Repeat buyers (>5 purchases) are more likely to subscribe |
+| Age Group Revenue | Total revenue contribution by age groups |
 
-- Major preprocessing tasks included
-- Importing dataset and basic exploration (df.info(), .describe())
-- Handling missing values — Imputed Review Rating using median per category
-- Column standardization to snake_case
-- Feature engineering:
-- age_group based on customer age ranges
-- purchase_frequency_days from transaction timestamps
-- Removed redundant column: promo_code_used
-- Loaded cleaned dataset into PostgreSQL for SQL-based analysis
+---
 
+## 📈 Dashboard — Power BI
+The dashboard visualizes:
 
+- Overall revenue and customer distribution  
+- Category & product performance  
+- Subscriber vs non-subscriber revenue  
+- Discount & shipping trends  
+- Demographic-based spend insights  
 
+---
 
+## 💡 Business Recommendations
+| Recommendation | Impact |
+|---------------|--------|
+| Promote subscription benefits | Boost recurring purchases |
+| Introduce loyalty programs | Increase retention |
+| Reevaluate discount strategy | Maintain profit margins |
+| Promote high-rated & top-selling products | Improve sales conversion |
+| Target campaigns based on age & shipping preference | Improve marketing ROI |
 
-📊 SQL-Based Business Analysis
+---
 
-Key insights extracted from PostgreSQL queries include:
-
-✔ Revenue comparison between male and female customers
-✔ High-spending customers who used discounts 
-✔ Top 5 products by average rating 
-✔ Express vs. Standard shipping revenue differences 
-✔ Subscriber vs. Non-subscriber spending analysis 
-✔ Products most dependent on discounts 
-✔ Customer segmentation: New, Returning, Loyal 
-✔ Top 3 most purchased products in each category 
-✔ Subscription likelihood among repeat buyers (>5 purchases) 
-✔ Revenue contribution by age groups 
-
-
-
-
-
-📈 Dashboard — Power BI
-
-An interactive Power BI dashboard was built to visualize:
-
-   - Total revenue breakdowns
-   - Product & category performance
-   - Subscription and discount trends
-   - Demographic-based customer spending
-
-
-
-
-💡 Business Recommendations
-
-Based on the findings:
-
-Recommendation Purpose:
-- Promote subscription benefits Boost recurring customers
-- Loyalty rewards for frequent buyers Increase retention
-- Review discount strategy Maintain revenue margins
-- Highlight best-rated & best-selling products Improve product positioning
-- Target marketing by age & shipping preferences Maximize conversion efficiency
+## 📁 Project Structure
